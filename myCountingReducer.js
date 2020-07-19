@@ -8,6 +8,9 @@ function myCountingReducer(state = initialState, action) {
         case "ADD": {
             return state + action.payload;
         }
+        case "RESET": {
+            return 0;
+        }
         default: {
             return state;
         }
