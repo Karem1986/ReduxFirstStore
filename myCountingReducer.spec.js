@@ -1,4 +1,5 @@
 //File to be tested by Jest
+// myCountingReducer.spec.js
 const { createStore } = require("redux");
 const reducer = require("./myCountingReducer");
 
@@ -27,42 +28,44 @@ test("SUBTRACT should work as expected", () => {
     const store = createStore(reducer);
 
     store.dispatch({
-        type: "SUBSTRACT", //Changed from ADD to SUBSTRACT AND WORKS NOW
+        type: "ADD",
         payload: 10,
     });
-    expect(store.getState()).toBe(0);
+    expect(store.getState()).toBe(10);
 
     store.dispatch({
         type: "SUBTRACT",
         payload: 5,
     });
-    expect(store.getState()).toBe(0); //NOW WORKS
+    expect(store.getState()).toBe(5);
 
     store.dispatch({
         type: "SUBTRACT",
         payload: 5,
     });
     expect(store.getState()).toBe(0);
-
 });
 
-//Adding a Multiply action type:
+
+//multiply
 test("MULTIPLY should work as expected", () => {
     const store = createStore(reducer);
 
     store.dispatch({
         type: "ADD",
-        payload: 72,
+        payload: 24,
     });
-    expect(store.getState()).toBe(72);
+    expect(store.getState()).toBe(24);
 
     store.dispatch({
         type: "MULTIPLY",
-        payload: 0,
+        payload: 3,
     });
-    expect(store.getState()).toBe(72); //expected
+    expect(store.getState()).toBe(72);
 });
-//Exercise
+
+//Reset
+
 test("RESET should work as expected", () => {
     const store = createStore(reducer);
 

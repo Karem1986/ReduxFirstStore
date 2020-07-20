@@ -8,6 +8,12 @@ function myCountingReducer(state = initialState, action) {
         case "ADD": {
             return state + action.payload;
         }
+        case "SUBTRACT": {
+            return state - action.payload;
+        }
+        case "MULTIPLY": {
+            return state * action.payload;
+        }
         case "RESET": {
             return 0;
         }

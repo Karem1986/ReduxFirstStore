@@ -28,7 +28,7 @@ store.subscribe(() => {
 // });
 
 store.dispatch({
-    type: "SUBSTRACT",
+    type: "SUBTRACT",
     payload: 10,
 });
 
